@@ -2,10 +2,12 @@ import 'dart:io';
 import 'package:planet_health/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:planet_health/user_data.dart';
 import 'navigation_home_screen.dart';
 //import 'fitness_app/fitness_app_home_screen.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
+import 'package:provider/provider.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:planet_health/globals.dart' as globals;
@@ -64,7 +66,10 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: NavigationHomeScreen(),
+      home: ChangeNotifierProvider(
+        create: (context) => Counter(),
+        child: NavigationHomeScreen(),
+      ),
       //home: FitnessAppHomeScreen(),
     );
   }
