@@ -83,15 +83,15 @@ class _TrainingScreenState extends State<TrainingScreen>
         animationController: widget.animationController!,
       ),
     );
-    listViews.add(
-      RunningView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-                Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
+    //listViews.add(
+    //  RunningView(
+    //    animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+    //        parent: widget.animationController!,
+    //        curve:
+    //            Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
+    //    animationController: widget.animationController!,
+    //  ),
+    //);
 
     listViews.add(
       TrainingMeasurementView(
@@ -103,16 +103,16 @@ class _TrainingScreenState extends State<TrainingScreen>
       ),
     );
 
-    listViews.add(
-      MealsListView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-            CurvedAnimation(
-                parent: widget.animationController!,
-                curve: Interval((1 / count) * 3, 1.0,
-                    curve: Curves.fastOutSlowIn))),
-        mainScreenAnimationController: widget.animationController,
-      ),
-    );
+    //listViews.add(
+    //  MealsListView(
+    //    mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+    //        CurvedAnimation(
+    //            parent: widget.animationController!,
+    //            curve: Interval((1 / count) * 3, 1.0,
+    //                curve: Curves.fastOutSlowIn))),
+    //    mainScreenAnimationController: widget.animationController,
+    //  ),
+    //);
 
     listViews.add(
       TitleView(
