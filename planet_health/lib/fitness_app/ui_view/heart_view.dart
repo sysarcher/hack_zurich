@@ -2,6 +2,7 @@ import 'package:planet_health/fitness_app/fitness_app_theme.dart';
 import 'package:planet_health/main.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import 'package:planet_health/globals.dart' as globals;
 
 class HeartView extends StatelessWidget {
   final AnimationController? animationController;
@@ -279,7 +280,8 @@ class HeartView extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            '${(77 * animation!.value).toInt()}',
+                                            //'${(77 * animation!.value).toInt()}',
+                                            '${(globals.heart_rate * animation!.value).toInt()}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:

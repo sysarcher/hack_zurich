@@ -2,10 +2,12 @@ import 'dart:io';
 import 'package:planet_health/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:planet_health/user_data.dart';
 import 'navigation_home_screen.dart';
 //import 'fitness_app/fitness_app_home_screen.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
+import 'package:provider/provider.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:planet_health/globals.dart' as globals;
@@ -18,6 +20,8 @@ Future<void> fetchApi() async {
   if (response.statusCode == 200) {
     Iterable user = convert.jsonDecode(response.body);
     print('Message: ${user.first}');
+    print(user.first['value']);
+    globals.heart_rate = user.first['value'];
   } else {
     print('Request failed with status: ${response.statusCode}.');
   }
@@ -25,6 +29,7 @@ Future<void> fetchApi() async {
 
 void testfetch() {
   const fiveSec = Duration(seconds: 5);
+  const oneMin = Duration(seconds: 60);
   Timer.periodic(
       fiveSec,
       (Timer t) => fetchApi().then((value) => print("No Error"), onError: (e) {
@@ -61,7 +66,10 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: NavigationHomeScreen(),
+      home: ChangeNotifierProvider(
+        create: (context) => Counter(),
+        child: NavigationHomeScreen(),
+      ),
       //home: FitnessAppHomeScreen(),
     );
   }

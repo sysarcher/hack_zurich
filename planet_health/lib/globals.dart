@@ -15,6 +15,8 @@ Map<String, String> headers = {
   'X-API-Key': api_key
 };
 
+int heart_rate = 77;
+
 var christof = {
   "id": "614ee7aa9187a32ff31d85c5",
   "firstName": "HackZurich",

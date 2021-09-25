@@ -7,9 +7,9 @@ import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'fitness_app_theme.dart';
 import 'my_diary/my_diary_screen.dart';
 
-import 'dart:convert' as convert;
-import 'package:http/http.dart' as http;
-import 'package:planet_health/globals.dart' as globals;
+//import 'dart:convert' as convert;
+//import 'package:http/http.dart' as http;
+//import 'package:planet_health/globals.dart' as globals;
 
 class FitnessAppHomeScreen extends StatefulWidget {
   @override
