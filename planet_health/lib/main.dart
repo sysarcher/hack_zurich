@@ -12,13 +12,12 @@ import 'package:planet_health/globals.dart' as globals;
 import 'dart:convert' as convert;
 
 Future<void> fetchApi() async {
-  var response = await http.get(
-      Uri.parse(globals.base_url + globals.profile_url),
+  var response = await http.get(Uri.parse(globals.base_url + globals.heart_url),
       headers: globals.headers);
 
   if (response.statusCode == 200) {
-    Map<String, dynamic> user = convert.jsonDecode(response.body);
-    print('Message: ${user}');
+    Iterable user = convert.jsonDecode(response.body);
+    print('Message: ${user.first}');
   } else {
     print('Request failed with status: ${response.statusCode}.');
   }

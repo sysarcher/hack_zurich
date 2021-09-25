@@ -4,8 +4,10 @@ String api_key = '0a66e421-c755-4794-82c3-451bed8ff4fd';
 String tenant_id = 'hackzurich';
 String base_url = 'https://api.fitrockr.com';
 String greet_url = '/v1/status/greet';
-String user = '613f5ed4da309d6b0fabe0b0';
+String user = '614ee7aa9187a32ff31d85c5';
 String profile_url = '/v1/users/${user}/profile';
+String heart_url =
+    '/v1/users/${user}/heartRate?startDate=2021-09-25&endDate=2021-09-26';
 
 Map<String, String> headers = {
   'Accept': 'application/json',
@@ -14,7 +16,7 @@ Map<String, String> headers = {
 };
 
 var christof = {
-  "id": "613f5ed4da309d6b0fabe0b0",
+  "id": "614ee7aa9187a32ff31d85c5",
   "firstName": "HackZurich",
   "lastName": "Test06",
   "basalMetabolism": 1783,
