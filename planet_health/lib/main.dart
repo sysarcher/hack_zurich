@@ -18,6 +18,8 @@ Future<void> fetchApi() async {
   if (response.statusCode == 200) {
     Iterable user = convert.jsonDecode(response.body);
     print('Message: ${user.first}');
+    print(user.first['value']);
+    globals.heart_rate = user.first['value'];
   } else {
     print('Request failed with status: ${response.statusCode}.');
   }
@@ -25,6 +27,7 @@ Future<void> fetchApi() async {
 
 void testfetch() {
   const fiveSec = Duration(seconds: 5);
+  const oneMin = Duration(seconds: 60);
   Timer.periodic(
       fiveSec,
       (Timer t) => fetchApi().then((value) => print("No Error"), onError: (e) {
