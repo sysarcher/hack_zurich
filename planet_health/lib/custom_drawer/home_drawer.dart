@@ -46,12 +46,12 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.Invite,
         labelName: 'Invite Friend',
-        icon: Icon(Icons.group),
+        icon: Icon(Icons.email),
       ),
       DrawerList(
         index: DrawerIndex.Share,
-        labelName: 'Rate the app',
-        icon: Icon(Icons.share),
+        labelName: 'Become a sponsor',
+        icon: Icon(Icons.group),
       ),
       DrawerList(
         index: DrawerIndex.About,
