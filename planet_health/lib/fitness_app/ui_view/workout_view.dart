@@ -60,7 +60,7 @@ class WorkoutView extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: const Text(
-                          'Legs Toning and\nGlutes Workout at Home',
+                          'Boost your workouts\nwith the energy of world-class trainers and experts. Go to demo videos and start exercising the right way. ',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontFamily: FitnessAppTheme.fontName,

@@ -96,7 +96,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                'Doctor Visit',
+                'Doctor visit',
                 style: TextStyle(fontSize: _fontsz, color: Colors.white),
               ),
               Icon(Icons.local_hospital,
@@ -108,10 +108,11 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                'AR Hospital',
+                'Personal trainer',
                 style: TextStyle(fontSize: _fontsz, color: Colors.white),
               ),
-              Icon(Icons.computer, color: Colors.white, size: _fontsz + 10),
+              Icon(Icons.fitness_center,
+                  color: Colors.white, size: _fontsz + 10),
             ],
           ),
           SizedBox(height: 10),
