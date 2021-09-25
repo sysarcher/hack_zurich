@@ -135,7 +135,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     // BMI
     listViews.add(
       TitleView(
-        titleTxt: 'BMI measurement',
+        titleTxt: 'BMI calculator',
         subTxt: 'Today',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,

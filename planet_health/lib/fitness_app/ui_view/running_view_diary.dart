@@ -54,7 +54,7 @@ class RunningViewDiary1 extends StatelessWidget {
                                   child: AspectRatio(
                                     aspectRatio: 1.714,
                                     child: Image.asset(
-                                        "assets/fitness_app/back.png"),
+                                        "assets/fitness_app/invisible.png"),
                                   ),
                                 ),
                               ),
@@ -65,12 +65,12 @@ class RunningViewDiary1 extends StatelessWidget {
                                     children: <Widget>[
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          left: 100,
+                                          left: 60,
                                           right: 16,
                                           top: 16,
                                         ),
                                         child: Text(
-                                          "You're doing great!",
+                                          "Mental health",
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                             fontFamily:
@@ -87,13 +87,13 @@ class RunningViewDiary1 extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                      left: 100,
+                                      left: 60,
                                       bottom: 12,
                                       top: 4,
                                       right: 16,
                                     ),
                                     child: Text(
-                                      "Keep it up\nand stick to your plan!",
+                                      "Enhance your cognitive wellbeing by playing games. Exercise slow breathing. Learn how to do meditation.",
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontFamily: FitnessAppTheme.fontName,
@@ -117,7 +117,7 @@ class RunningViewDiary1 extends StatelessWidget {
                         child: SizedBox(
                           width: 110,
                           height: 110,
-                          child: Image.asset("assets/fitness_app/runner.png"),
+                          child: Image.asset("assets/fitness_app/mental.png"),
                         ),
                       )
                     ],
@@ -185,7 +185,7 @@ class RunningViewDiary2 extends StatelessWidget {
                                   child: AspectRatio(
                                     aspectRatio: 1.714,
                                     child: Image.asset(
-                                        "assets/fitness_app/back.png"),
+                                        "assets/fitness_app/invisible.png"),
                                   ),
                                 ),
                               ),
@@ -196,12 +196,12 @@ class RunningViewDiary2 extends StatelessWidget {
                                     children: <Widget>[
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          left: 100,
+                                          left: 60,
                                           right: 16,
                                           top: 16,
                                         ),
                                         child: Text(
-                                          "You're doing great!",
+                                          "Woman health",
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                             fontFamily:
@@ -218,13 +218,13 @@ class RunningViewDiary2 extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                      left: 100,
+                                      left: 60,
                                       bottom: 12,
                                       top: 4,
                                       right: 16,
                                     ),
                                     child: Text(
-                                      "Keep it up\nand stick to your plan!",
+                                      "Track your menstrual cycle and get fertility predictions.\nGet related recommendations on food and training.",
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontFamily: FitnessAppTheme.fontName,
@@ -248,7 +248,7 @@ class RunningViewDiary2 extends StatelessWidget {
                         child: SizedBox(
                           width: 110,
                           height: 110,
-                          child: Image.asset("assets/fitness_app/runner.png"),
+                          child: Image.asset("assets/fitness_app/redcycle.png"),
                         ),
                       )
                     ],
