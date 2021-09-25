@@ -8,6 +8,8 @@ String user = '614ee7aa9187a32ff31d85c5';
 String profile_url = '/v1/users/${user}/profile';
 String heart_url =
     '/v1/users/${user}/heartRate?startDate=2021-09-25&endDate=2021-09-26';
+String daily_summary_uri =
+    '/v1/users/${user}/dailySummaries?startDate=2021-09-25&endDate=2021-09-26';
 
 Map<String, String> headers = {
   'Accept': 'application/json',
@@ -16,6 +18,12 @@ Map<String, String> headers = {
 };
 
 int heart_rate = 77;
+int heart_rate_high = 97;
+int heart_rate_low = 57;
+int weight = 55;
+int daily_cals = 1000;
+int daily_steps = 1000;
+double daily_km = 1.5;
 
 var christof = {
   "id": "614ee7aa9187a32ff31d85c5",

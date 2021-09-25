@@ -1,5 +1,6 @@
 import 'package:planet_health/fitness_app/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:planet_health/globals.dart' as globals;
 
 class BodyMeasurementViewDiary extends StatelessWidget {
   final AnimationController? animationController;
@@ -72,7 +73,8 @@ class BodyMeasurementViewDiary extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                         left: 4, bottom: 3),
                                     child: Text(
-                                      '70',
+                                      //'70',
+                                      globals.weight.toString(),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily: FitnessAppTheme.fontName,

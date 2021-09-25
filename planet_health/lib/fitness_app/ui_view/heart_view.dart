@@ -106,7 +106,8 @@ class HeartView extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(58 * animation!.value).toInt()}',
+                                                    //'${(58 * animation!.value).toInt()}',
+                                                    '${(globals.heart_rate_low * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -205,7 +206,8 @@ class HeartView extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(177 * animation!.value).toInt()}',
+                                                    //'${(177 * animation!.value).toInt()}',
+                                                    '${(globals.heart_rate_high * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:

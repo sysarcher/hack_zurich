@@ -1,6 +1,7 @@
 import 'package:planet_health/fitness_app/fitness_app_theme.dart';
 import 'package:planet_health/main.dart';
 import 'package:flutter/material.dart';
+import 'package:planet_health/globals.dart' as globals;
 import 'dart:math' as math;
 
 class TrainingMeasurementView extends StatelessWidget {
@@ -106,7 +107,8 @@ class TrainingMeasurementView extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(1100 * animation!.value).toInt()}',
+                                                    //'${(1100 * animation!.value).toInt()}',
+                                                    '${(globals.daily_cals * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -205,7 +207,8 @@ class TrainingMeasurementView extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(6 * animation!.value).toInt()}',
+                                                    //'${(6 * animation!.value).toInt()}',
+                                                    '${(globals.daily_km * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -280,7 +283,8 @@ class TrainingMeasurementView extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            '${(7545 * animation!.value).toInt()}',
+                                            //'${(7545 * animation!.value).toInt()}',
+                                            '${(globals.daily_steps * animation!.value).toInt()}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:

@@ -13,7 +13,7 @@ import 'package:http/http.dart' as http;
 import 'package:planet_health/globals.dart' as globals;
 import 'dart:convert' as convert;
 
-Future<void> fetchApi() async {
+Future<void> fetchApi_heart() async {
   try {
     var response = await http.get(
         Uri.parse(globals.base_url + globals.heart_url),
@@ -24,6 +24,12 @@ Future<void> fetchApi() async {
       print('Message: ${user.first}');
       print(user.first['value']);
       globals.heart_rate = user.first['value'];
+      if (globals.heart_rate > globals.heart_rate_high) {
+        globals.heart_rate_high = globals.heart_rate;
+      }
+      if (globals.heart_rate < globals.heart_rate_low) {
+        globals.heart_rate_low = globals.heart_rate;
+      }
     } else {
       print('Request failed with status: ${response.statusCode}.');
     }
@@ -32,14 +38,56 @@ Future<void> fetchApi() async {
   }
 }
 
+Future<void> fetchApi_cal(String uri) async {
+  try {
+    var response = await http.get(Uri.parse(uri), headers: globals.headers);
+
+    if (response.statusCode == 200) {
+      Iterable user = convert.jsonDecode(response.body);
+      print('Cals: ${user.first}');
+      print(user.first['value']);
+
+      globals.daily_steps = user.first['steps'];
+      globals.daily_cals = user.first['calories'];
+      globals.daily_km = user.first['distance'] / 1000.0;
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  } catch (_) {
+    print("CHECK WIFI");
+  }
+}
+
+Future<void> fetchApi_profile() async {
+  try {
+    var response = await http.get(
+        Uri.parse(globals.base_url + globals.profile_url),
+        headers: globals.headers);
+
+    if (response.statusCode == 200) {
+      var user = convert.jsonDecode(response.body);
+      print('Message: ${user}');
+      print('weight: ${user['weight']}');
+      globals.weight = user['weight'];
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  } catch (_) {
+    print("Err getting weight");
+  }
+}
+
 void testfetch() {
   const fiveSec = Duration(seconds: 5);
   const oneMin = Duration(seconds: 60);
   Timer.periodic(
       fiveSec,
-      (Timer t) => fetchApi().then((value) => print("No Error"), onError: (e) {
+      (Timer t) =>
+          fetchApi_heart().then((value) => print("No Error"), onError: (e) {
             print("Error: in HTTP invocation: ${e}");
           }));
+  fetchApi_profile();
+  fetchApi_cal(globals.base_url + globals.daily_summary_uri);
 }
 
 void main() async {
