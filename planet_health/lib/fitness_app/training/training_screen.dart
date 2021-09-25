@@ -4,6 +4,7 @@ import 'package:planet_health/fitness_app/training/meals_list_view.dart';
 import 'package:planet_health/fitness_app/ui_view/training_list_view.dart';
 import 'package:planet_health/fitness_app/ui_view/running_view.dart';
 import 'package:planet_health/fitness_app/ui_view/title_view.dart';
+import 'package:planet_health/fitness_app/ui_view/glass_view_training.dart';
 import 'package:planet_health/fitness_app/ui_view/workout_view.dart';
 import 'package:planet_health/fitness_app/ui_view/training_measurement_card.dart';
 import 'package:flutter/material.dart';
@@ -135,6 +136,17 @@ class _TrainingScreenState extends State<TrainingScreen>
                     curve: Curves.fastOutSlowIn))),
         mainScreenAnimationController: widget.animationController!,
       ),
+    );
+
+    // Share button
+    listViews.add(
+      GlassView(
+          animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+              CurvedAnimation(
+                  parent: widget.animationController!,
+                  curve: Interval((1 / count) * 8, 1.0,
+                      curve: Curves.fastOutSlowIn))),
+          animationController: widget.animationController!),
     );
   }
 
