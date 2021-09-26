@@ -1,0 +1,549 @@
+﻿{
+  "paragraphs": [
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632625979580_1142387444",
+      "id": "paragraph_1632625979580_1142387444",
+      "dateCreated": "2021-09-26T03:12:59+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:365",
+      "text": "%md\n\nNotebook for large-scale data environments.\n\n- Note although Flink is running and available, it is not ncessarily used\n- Flink will need to be connected to data source like Kafka ingesting Garmin watch data. \n\nIn this example we only take a simple use case, use `pandas` library.",
+      "dateUpdated": "2021-09-26T03:15:47+0000",
+      "dateFinished": "2021-09-26T03:15:47+0000",
+      "dateStarted": "2021-09-26T03:15:47+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Notebook for large-scale data environments.</p>\n<ul>\n<li>Note although Flink is running and available, it is not ncessarily used</li>\n<li>Flink will need to be connected to data source like Kafka ingesting Garmin watch data.</li>\n</ul>\n<p>In this example we only take a simple use case, use <code>pandas</code> library.</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.pyflink\n\nfrom pyflink.common.serialization import Encoder\nfrom pyflink.common.typeinfo import Types\nfrom pyflink.datastream import StreamExecutionEnvironment\nfrom pyflink.datastream.connectors import StreamingFileSink\nfrom pyflink.common.serialization import JsonRowSerializationSchema\n\nfrom requests.auth import HTTPBasicAuth\nimport requests\nimport pandas as pd\nfrom pandas.io.json import json_normalize\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:19:31+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626147940_1975990378",
+      "id": "paragraph_1632626147940_1975990378",
+      "dateCreated": "2021-09-26T03:15:47+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:523",
+      "dateFinished": "2021-09-26T03:19:36+0000",
+      "dateStarted": "2021-09-26T03:19:31+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "%md\n\n## Data Exploration\n\nThe first step to analyzing the data is exploring it",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:19:36+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626341018_1030356197",
+      "id": "paragraph_1632626341018_1030356197",
+      "dateCreated": "2021-09-26T03:19:01+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:679",
+      "dateFinished": "2021-09-26T03:19:36+0000",
+      "dateStarted": "2021-09-26T03:19:36+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Data Exploration</h2>\n<p>The first step to analyzing the data is exploring it</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.pyflink\n\nurl = 'https://api.fitrockr.com' + '/v1/status/greet'\nheaders = {'Accept': 'application/json'}\n#auth = HTTPBasicAuth('apikey', '0a66e421-c755-4794-82c3-451bed8ff4fd')\n#files = {'file': open('filename', 'rb')}\nheaders = {'Accept': 'application/json', 'X-Tenant': 'hackzurich', 'X-API-Key': '0a66e421-c755-4794-82c3-451bed8ff4fd'}\n\nreq = requests.get(url, headers=headers)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:20:01+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626323040_1915791094",
+      "id": "paragraph_1632626323040_1915791094",
+      "dateCreated": "2021-09-26T03:18:43+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:607",
+      "dateFinished": "2021-09-26T03:20:04+0000",
+      "dateStarted": "2021-09-26T03:20:01+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "%flink.pyflink\nurl = 'https://api.fitrockr.com/v1/users?page=0&size=100'\nreq = requests.get(url, headers=headers)\nreq.json()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:20:09+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626401892_1556784497",
+      "id": "paragraph_1632626401892_1556784497",
+      "dateCreated": "2021-09-26T03:20:01+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:799",
+      "dateFinished": "2021-09-26T03:20:11+0000",
+      "dateStarted": "2021-09-26T03:20:09+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[{'id': '613c42db06cf9f7196d255af',\n  'firstName': 'Fitrockr',\n  'lastName': 'Support',\n  'profilePicUrl': None},\n {'id': '613db206309a3f06bfa3d028',\n  'firstName': 'Test',\n  'lastName': 'User',\n  'profilePicUrl': None},\n {'id': '613db3d1309a3f06bfa4046c',\n  'firstName': 'HackZurich',\n  'lastName': 'Test03',\n  'profilePicUrl': None},\n {'id': '613dc4c9309a3f06bfa716ee',\n  'firstName': 'Christof',\n  'lastName': 'Kuhlmeyer',\n  'profilePicUrl': None},\n {'id': '613f5ed4da309d6b0fabe0af',\n  'firstName': 'HackZurich',\n  'lastName': 'Test01',\n  'profilePicUrl': None},\n {'id': '613f5ed4da309d6b0fabe0b0',\n  'firstName': 'HackZurich',\n  'lastName': 'Test06',\n  'profilePicUrl': None},\n {'id': '613f5ed4da309d6b0fabe0b1',\n  'firstName': 'HackZurich',\n  'lastName': 'Test05',\n  'profilePicUrl': None},\n {'id': '613f5ed4da309d6b0fabe0b2',\n  'firstName': 'HackZurich',\n  'lastName': 'Test03',\n  'profilePicUrl': None},\n {'id': '613f5ed4da309d6b0fabe0b3',\n  'firstName': 'HackZurich',\n  'lastName': 'Test02',\n  'profilePicUrl': None},\n {'id': '613f5ed4da309d6b0fabe0b4',\n  'firstName': 'HackZurich',\n  'lastName': 'Test04',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0b5',\n  'firstName': 'HackZurich',\n  'lastName': 'Test11',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0b6',\n  'firstName': 'HackZurich',\n  'lastName': 'Test10',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0b7',\n  'firstName': 'HackZurich',\n  'lastName': 'Test09',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0b8',\n  'firstName': 'HackZurich',\n  'lastName': 'Test08',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0b9',\n  'firstName': 'HackZurich',\n  'lastName': 'Test07',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0ba',\n  'firstName': 'HackZurich',\n  'lastName': 'Test16',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0bb',\n  'firstName': 'HackZurich',\n  'lastName': 'Test15',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0bc',\n  'firstName': 'HackZurich',\n  'lastName': 'Test14',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0bd',\n  'firstName': 'HackZurich',\n  'lastName': 'Test13',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0be',\n  'firstName': 'HackZurich',\n  'lastName': 'Test12',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0bf',\n  'firstName': 'HackZurich',\n  'lastName': 'Test21',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0c0',\n  'firstName': 'HackZurich',\n  'lastName': 'Test20',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0c1',\n  'firstName': 'HackZurich',\n  'lastName': 'Test19',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0c2',\n  'firstName': 'HackZurich',\n  'lastName': 'Test18',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0c3',\n  'firstName': 'HackZurich',\n  'lastName': 'Test17',\n  'profilePicUrl': None},\n {'id': '613f5ed5da309d6b0fabe0c4',\n  'firstName': 'HackZurich',\n  'lastName': 'Test26',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0c5',\n  'firstName': 'HackZurich',\n  'lastName': 'Test25',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0c6',\n  'firstName': 'HackZurich',\n  'lastName': 'Test24',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0c7',\n  'firstName': 'HackZurich',\n  'lastName': 'Test23',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0c8',\n  'firstName': 'HackZurich',\n  'lastName': 'Test22',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0c9',\n  'firstName': 'HackZurich',\n  'lastName': 'Test31',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0ca',\n  'firstName': 'HackZurich',\n  'lastName': 'Test30',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0cb',\n  'firstName': 'HackZurich',\n  'lastName': 'Test29',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0cc',\n  'firstName': 'HackZurich',\n  'lastName': 'Test28',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0cd',\n  'firstName': 'HackZurich',\n  'lastName': 'Test27',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0ce',\n  'firstName': 'HackZurich',\n  'lastName': 'Test36',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0cf',\n  'firstName': 'HackZurich',\n  'lastName': 'Test35',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0d0',\n  'firstName': 'HackZurich',\n  'lastName': 'Test34',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0d1',\n  'firstName': 'HackZurich',\n  'lastName': 'Test33',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0d2',\n  'firstName': 'HackZurich',\n  'lastName': 'Test32',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0d3',\n  'firstName': 'HackZurich',\n  'lastName': 'Test41',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0d4',\n  'firstName': 'HackZurich',\n  'lastName': 'Test40',\n  'profilePicUrl': None},\n {'id': '613f5ed6da309d6b0fabe0d5',\n  'firstName': 'HackZurich',\n  'lastName': 'Test39',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0d6',\n  'firstName': 'HackZurich',\n  'lastName': 'Test38',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0d7',\n  'firstName': 'HackZurich',\n  'lastName': 'Test37',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0d8',\n  'firstName': 'HackZurich',\n  'lastName': 'Test46',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0d9',\n  'firstName': 'HackZurich',\n  'lastName': 'Test45',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0da',\n  'firstName': 'HackZurich',\n  'lastName': 'Test44',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0db',\n  'firstName': 'HackZurich',\n  'lastName': 'Test43',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0dc',\n  'firstName': 'HackZurich',\n  'lastName': 'Test42',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0dd',\n  'firstName': 'HackZurich',\n  'lastName': 'Test51',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0de',\n  'firstName': 'HackZurich',\n  'lastName': 'Test50',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0df',\n  'firstName': 'HackZurich',\n  'lastName': 'Test49',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0e0',\n  'firstName': 'HackZurich',\n  'lastName': 'Test48',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0e1',\n  'firstName': 'HackZurich',\n  'lastName': 'Test47',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0e2',\n  'firstName': 'HackZurich',\n  'lastName': 'Test56',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0e3',\n  'firstName': 'HackZurich',\n  'lastName': 'Test55',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0e4',\n  'firstName': 'HackZurich',\n  'lastName': 'Test54',\n  'profilePicUrl': None},\n {'id': '613f5ed7da309d6b0fabe0e5',\n  'firstName': 'HackZurich',\n  'lastName': 'Test53',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0e6',\n  'firstName': 'HackZurich',\n  'lastName': 'Test52',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0e7',\n  'firstName': 'HackZurich',\n  'lastName': 'Test61',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0e8',\n  'firstName': 'HackZurich',\n  'lastName': 'Test60',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0e9',\n  'firstName': 'HackZurich',\n  'lastName': 'Test59',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0ea',\n  'firstName': 'HackZurich',\n  'lastName': 'Test58',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0eb',\n  'firstName': 'HackZurich',\n  'lastName': 'Test57',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0ec',\n  'firstName': 'HackZurich',\n  'lastName': 'Test66',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0ed',\n  'firstName': 'HackZurich',\n  'lastName': 'Test65',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0ee',\n  'firstName': 'HackZurich',\n  'lastName': 'Test64',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0ef',\n  'firstName': 'HackZurich',\n  'lastName': 'Test63',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0f0',\n  'firstName': 'HackZurich',\n  'lastName': 'Test62',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0f1',\n  'firstName': 'HackZurich',\n  'lastName': 'Test68',\n  'profilePicUrl': None},\n {'id': '613f5ed8da309d6b0fabe0f2',\n  'firstName': 'HackZurich',\n  'lastName': 'Test67',\n  'profilePicUrl': None},\n {'id': '6141b615d60f0959d940f423',\n  'firstName': 'Garmin ',\n  'lastName': 'API-Support',\n  'profilePicUrl': None},\n {'id': '6149e169bb7fcc48adc1dacd',\n  'firstName': None,\n  'lastName': None,\n  'profilePicUrl': None},\n {'id': '614e4abd9187a32ff3c7d8d2',\n  'firstName': 'Bharath',\n  'lastName': 'Nair',\n  'profilePicUrl': None},\n {'id': '614eca989187a32ff306f1dd',\n  'firstName': 'Deepjyoti',\n  'lastName': 'Paul',\n  'profilePicUrl': None},\n {'id': '614eddb99187a32ff317145c',\n  'firstName': 'Rom',\n  'lastName': 'Cohen',\n  'profilePicUrl': None},\n {'id': '614ee7aa9187a32ff31d85c5',\n  'firstName': 'Greta',\n  'lastName': 'Thu',\n  'profilePicUrl': None},\n {'id': '614ef0829187a32ff3261c45',\n  'firstName': 'Greta',\n  'lastName': 'Thu',\n  'profilePicUrl': None},\n {'id': '614ef1869187a32ff3267ba4',\n  'firstName': 'Greta',\n  'lastName': 'Thu',\n  'profilePicUrl': None},\n {'id': '614ef2109187a32ff326d76d',\n  'firstName': 'Greta',\n  'lastName': 'Thu',\n  'profilePicUrl': None},\n {'id': '614f07539187a32ff33a977d',\n  'firstName': 'New User RC',\n  'lastName': 'RC',\n  'profilePicUrl': None},\n {'id': '614f0b479187a32ff33d0b18',\n  'firstName': 'Dave',\n  'lastName': 'Zimmer',\n  'profilePicUrl': None},\n {'id': '614f19336af5c20692168027',\n  'firstName': 'seven',\n  'lastName': 'wind',\n  'profilePicUrl': None},\n {'id': '614f19a06af5c20692179ead',\n  'firstName': 'seven',\n  'lastName': 'wind',\n  'profilePicUrl': None}]"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.pyflink\nlen(req.json())  # get number of users",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:22:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626409365_1121833057",
+      "id": "paragraph_1632626409365_1121833057",
+      "dateCreated": "2021-09-26T03:20:09+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:883",
+      "dateFinished": "2021-09-26T03:22:36+0000",
+      "dateStarted": "2021-09-26T03:22:34+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "85"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.pyflink\ndf_users = pd.DataFrame(req.json())\n\ndf_users.head()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:23:27+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626603403_1934853948",
+      "id": "paragraph_1632626603403_1934853948",
+      "dateCreated": "2021-09-26T03:23:23+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1179",
+      "dateFinished": "2021-09-26T03:23:30+0000",
+      "dateStarted": "2021-09-26T03:23:27+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>id</th>\n      <th>firstName</th>\n      <th>lastName</th>\n      <th>profilePicUrl</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>613c42db06cf9f7196d255af</td>\n      <td>Fitrockr</td>\n      <td>Support</td>\n      <td>None</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>613db206309a3f06bfa3d028</td>\n      <td>Test</td>\n      <td>User</td>\n      <td>None</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>613db3d1309a3f06bfa4046c</td>\n      <td>HackZurich</td>\n      <td>Test03</td>\n      <td>None</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>613dc4c9309a3f06bfa716ee</td>\n      <td>Christof</td>\n      <td>Kuhlmeyer</td>\n      <td>None</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>613f5ed4da309d6b0fabe0af</td>\n      <td>HackZurich</td>\n      <td>Test01</td>\n      <td>None</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.pyflink\nuser_data = []\nfor user in df_users['id'].tolist():\n    url = f'https://api.fitrockr.com/v1/users/{user}/profile'\n    req = requests.get(url, headers=headers)\n    user_data.append(req.json())",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:23:36+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626554451_1666708998",
+      "id": "paragraph_1632626554451_1666708998",
+      "dateCreated": "2021-09-26T03:22:34+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:980",
+      "dateFinished": "2021-09-26T03:23:47+0000",
+      "dateStarted": "2021-09-26T03:23:36+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "%flink.pyflink\nuser_daily_summary = []\nfor user in df_users['id'].tolist():\n    url = f'https://api.fitrockr.com/v1/users/{user}/dailySummaries'\n    req = requests.get(url, headers=headers)\n    user_daily_summary.append(req.json())\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:24:08+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626580830_1484058662",
+      "id": "paragraph_1632626580830_1484058662",
+      "dateCreated": "2021-09-26T03:23:00+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1085",
+      "dateFinished": "2021-09-26T03:24:21+0000",
+      "dateStarted": "2021-09-26T03:24:08+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "%md\n\n## Useful data\n\nNotable features of this dataset\n\n- User Profile \n  - Genders are all: M\n  - Country seems to be: DE (to be checked)\n  - age info (year of birth info)\n  - Look into `basalMetabolism` of users (https://www.healthline.com/health/what-is-basal-metabolic-rate)\n  - \n- Heart Rate\n  - Heart rate per user \n- Activities\n  - calories\n  - Distance\n  - Steps\n- Intraday++\n  - +metabolic value\n  - ++Stress \n- Motion Intensity +\n- Sleep\n- BBI\n- Reports Kpi\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:25:17+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626648886_1663500648",
+      "id": "paragraph_1632626648886_1663500648",
+      "dateCreated": "2021-09-26T03:24:08+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1325",
+      "dateFinished": "2021-09-26T03:25:17+0000",
+      "dateStarted": "2021-09-26T03:25:17+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Useful data</h2>\n<p>Notable features of this dataset</p>\n<ul>\n<li>User Profile\n<ul>\n<li>Genders are all: M</li>\n<li>Country seems to be: DE (to be checked)</li>\n<li>age info (year of birth info)</li>\n<li>Look into <code>basalMetabolism</code> of users (<a href=\"https://www.healthline.com/health/what-is-basal-metabolic-rate\">https://www.healthline.com/health/what-is-basal-metabolic-rate</a>)</li>\n<li></li>\n</ul>\n</li>\n<li>Heart Rate\n<ul>\n<li>Heart rate per user</li>\n</ul>\n</li>\n<li>Activities\n<ul>\n<li>calories</li>\n<li>Distance</li>\n<li>Steps</li>\n</ul>\n</li>\n<li>Intraday++\n<ul>\n<li>+metabolic value</li>\n<li>++Stress</li>\n</ul>\n</li>\n<li>Motion Intensity +</li>\n<li>Sleep</li>\n<li>BBI</li>\n<li>Reports Kpi</li>\n</ul>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.pyflink\ndf_user_data = pd.DataFrame(user_data)\ndf_user_data.head(100)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:26:08+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626717505_1677127846",
+      "id": "paragraph_1632626717505_1677127846",
+      "dateCreated": "2021-09-26T03:25:17+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1418",
+      "dateFinished": "2021-09-26T03:26:10+0000",
+      "dateStarted": "2021-09-26T03:26:08+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>id</th>\n      <th>firstName</th>\n      <th>lastName</th>\n      <th>profilePicUrl</th>\n      <th>basalMetabolism</th>\n      <th>gender</th>\n      <th>country</th>\n      <th>city</th>\n      <th>language</th>\n      <th>timeZone</th>\n      <th>...</th>\n      <th>height</th>\n      <th>heightUOM</th>\n      <th>weight</th>\n      <th>weightUOM</th>\n      <th>lastSync</th>\n      <th>trackerName</th>\n      <th>active</th>\n      <th>usualSleepStartTime</th>\n      <th>usualSleepEndTime</th>\n      <th>imperialUnits</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>613c42db06cf9f7196d255af</td>\n      <td>Fitrockr</td>\n      <td>Support</td>\n      <td>None</td>\n      <td>1853.0</td>\n      <td>m</td>\n      <td>DE</td>\n      <td>None</td>\n      <td>en</td>\n      <td>Europe/Berlin</td>\n      <td>...</td>\n      <td>180.0</td>\n      <td>cm</td>\n      <td>90.0</td>\n      <td>kg</td>\n      <td>None</td>\n      <td>None</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>613db206309a3f06bfa3d028</td>\n      <td>Test</td>\n      <td>User</td>\n      <td>None</td>\n      <td>1920.0</td>\n      <td>m</td>\n      <td>DE</td>\n      <td></td>\n      <td>en</td>\n      <td>Europe/Berlin</td>\n      <td>...</td>\n      <td>180.0</td>\n      <td>cm</td>\n      <td>80.0</td>\n      <td>kg</td>\n      <td>2021-09-14T16:26:25+0000</td>\n      <td>Garmin</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>613db3d1309a3f06bfa4046c</td>\n      <td>HackZurich</td>\n      <td>Test03</td>\n      <td>None</td>\n      <td>1783.0</td>\n      <td>m</td>\n      <td>DE</td>\n      <td></td>\n      <td>en</td>\n      <td>Etc/GMT+1</td>\n      <td>...</td>\n      <td>180.0</td>\n      <td>cm</td>\n      <td>75.0</td>\n      <td>kg</td>\n      <td>2021-09-14T15:37:54+0000</td>\n      <td>None</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>613dc4c9309a3f06bfa716ee</td>\n      <td>Christof</td>\n      <td>Kuhlmeyer</td>\n      <td>None</td>\n      <td>1845.0</td>\n      <td>m</td>\n      <td>DE</td>\n      <td>Berlin</td>\n      <td>en</td>\n      <td>Europe/Berlin</td>\n      <td>...</td>\n      <td>180.0</td>\n      <td>cm</td>\n      <td>85.0</td>\n      <td>kg</td>\n      <td>2021-09-26T00:40:06+0000</td>\n      <td>Garmin</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>613f5ed4da309d6b0fabe0af</td>\n      <td>HackZurich</td>\n      <td>Test01</td>\n      <td>None</td>\n      <td>1783.0</td>\n      <td>m</td>\n      <td>DE</td>\n      <td>None</td>\n      <td>en</td>\n      <td>Etc/GMT+1</td>\n      <td>...</td>\n      <td>180.0</td>\n      <td>cm</td>\n      <td>75.0</td>\n      <td>kg</td>\n      <td>2021-09-13T14:24:32+0000</td>\n      <td>Garmin</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>...</th>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>80</th>\n      <td>614ef2109187a32ff326d76d</td>\n      <td>Greta</td>\n      <td>Thu</td>\n      <td>None</td>\n      <td>1596.0</td>\n      <td>f</td>\n      <td>DE</td>\n      <td>Berlin</td>\n      <td>de</td>\n      <td>GMT+01:00</td>\n      <td>...</td>\n      <td>170.0</td>\n      <td>cm</td>\n      <td>75.0</td>\n      <td>kg</td>\n      <td>None</td>\n      <td>None</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>81</th>\n      <td>614f07539187a32ff33a977d</td>\n      <td>New User RC</td>\n      <td>RC</td>\n      <td>None</td>\n      <td>1739.0</td>\n      <td>m</td>\n      <td>IL</td>\n      <td></td>\n      <td>en</td>\n      <td>Etc/GMT+0</td>\n      <td>...</td>\n      <td>174.0</td>\n      <td>cm</td>\n      <td>72.0</td>\n      <td>kg</td>\n      <td>2021-09-25T23:39:10+0000</td>\n      <td>Garmin</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>82</th>\n      <td>614f0b479187a32ff33d0b18</td>\n      <td>Dave</td>\n      <td>Zimmer</td>\n      <td>None</td>\n      <td>1810.0</td>\n      <td>m</td>\n      <td>DE</td>\n      <td>Zurich</td>\n      <td>de</td>\n      <td>GMT+01:00</td>\n      <td>...</td>\n      <td>180.0</td>\n      <td>cm</td>\n      <td>75.0</td>\n      <td>kg</td>\n      <td>2021-09-26T00:39:13+0000</td>\n      <td>Garmin</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>83</th>\n      <td>614f19336af5c20692168027</td>\n      <td>seven</td>\n      <td>wind</td>\n      <td>None</td>\n      <td>1435.0</td>\n      <td>m</td>\n      <td>DE</td>\n      <td>Zurich</td>\n      <td>en</td>\n      <td>GMT+01:00</td>\n      <td>...</td>\n      <td>168.0</td>\n      <td>cm</td>\n      <td>53.0</td>\n      <td>kg</td>\n      <td>2021-09-26T00:27:23+0000</td>\n      <td>Garmin</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>84</th>\n      <td>614f19a06af5c20692179ead</td>\n      <td>seven</td>\n      <td>wind</td>\n      <td>None</td>\n      <td>1330.0</td>\n      <td>f</td>\n      <td>DE</td>\n      <td>Zurich</td>\n      <td>en</td>\n      <td>GMT+01:00</td>\n      <td>...</td>\n      <td>168.0</td>\n      <td>cm</td>\n      <td>53.0</td>\n      <td>kg</td>\n      <td>None</td>\n      <td>None</td>\n      <td>True</td>\n      <td>None</td>\n      <td>None</td>\n      <td>False</td>\n    </tr>\n  </tbody>\n</table>\n<p>85 rows × 22 columns</p>\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.pyflink\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:26:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626739540_766435377",
+      "id": "paragraph_1632626739540_766435377",
+      "dateCreated": "2021-09-26T03:25:39+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1508",
+      "dateFinished": "2021-09-26T03:26:26+0000",
+      "dateStarted": "2021-09-26T03:26:24+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "text": "%flink.pyflink\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-26T03:26:24+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632626784632_1349442990",
+      "id": "paragraph_1632626784632_1349442990",
+      "dateCreated": "2021-09-26T03:26:24+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:1637"
+    }
+  ],
+  "name": "zurich",
+  "id": "2GGUHWC1Q",
+  "defaultInterpreterGroup": "flink",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/b/zurich"
+}
