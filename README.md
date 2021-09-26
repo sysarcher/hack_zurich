@@ -1,16 +1,13 @@
-# planet_health
+# PlanetHealth
+[![CI](https://github.com/sysarcher/hack_zurich/actions/workflows/main.yml/badge.svg)](https://github.com/sysarcher/hack_zurich/actions/workflows/main.yml)
 
-A new Flutter project.
+PlanetHealth is a community dedicated to sustainable and healthy communities and individuals.
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+PlanetHealth mobile app is written in Dart/Flutter so you will need to setup a flutter development environment. See flutter.dev for setting up Flutter in your environment.
 
-A few resources to get you started if this is your first Flutter project:
+The analytics part is mostly written in Python. A Jupyter/IPython notebook is provided. Instructions for setting up the environment are inside the [`notebook`](./notebook) directory.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Code for the mobile app is under [`planet_health`](./planet_health).
