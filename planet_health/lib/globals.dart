@@ -25,6 +25,40 @@ int daily_cals = 1000;
 int daily_steps = 1000;
 double daily_km = 1.5;
 
+class EnergyMap {
+  String name = '';
+  int calories = 0;
+  int co2 = 0;
+
+  EnergyMap(String name, int calories, int co2) {
+    this.name = name;
+    this.calories = calories;
+    this.co2 = co2;
+  }
+}
+
+var bread = EnergyMap("Bread", 66, 120);
+var beef = EnergyMap("Beef", 348, 30000);
+var salmon = EnergyMap("Salmon", 115, 2500);
+var tofu = EnergyMap("Tofu", 77, 150);
+var milk = EnergyMap("Milk", 122, 280);
+var water = EnergyMap("Water", 0, 5);
+List<EnergyMap> day1 = [bread, beef, salmon];
+List<EnergyMap> day2 = [tofu, milk, water];
+int total_co2e = 0;
+
+var energy_map = {
+  'white_bread': {
+    'name': 'White Bread',
+    'calories': 66,
+    'co2': 120,
+  },
+  'beef': {
+    'name': 'Beef',
+    'calories': 30000,
+  },
+};
+
 var christof = {
   "id": "614ee7aa9187a32ff31d85c5",
   "firstName": "HackZurich",

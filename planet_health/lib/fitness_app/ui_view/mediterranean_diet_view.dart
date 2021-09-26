@@ -1,6 +1,7 @@
 import 'package:planet_health/fitness_app/fitness_app_theme.dart';
 import 'package:planet_health/main.dart';
 import 'package:flutter/material.dart';
+import 'package:planet_health/globals.dart' as globals;
 import 'dart:math' as math;
 
 class MediterraneanDietView extends StatelessWidget {
@@ -106,7 +107,7 @@ class MediterraneanDietView extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(18 * animation!.value).toInt()}',
+                                                    '${(globals.total_co2e * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
