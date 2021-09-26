@@ -76,17 +76,51 @@ class MediterraneanDietView extends StatelessWidget {
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   left: 4, bottom: 2),
-                                              child: Text(
-                                                'CO₂ emissions',
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  fontFamily:
-                                                      FitnessAppTheme.fontName,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 16,
-                                                  letterSpacing: -0.1,
-                                                  color: FitnessAppTheme.grey
-                                                      .withOpacity(0.5),
+                                              child: GestureDetector(
+                                                onTap: () {
+                                                  print('CO2e');
+                                                  var dialogText = '';
+                                                  if (globals.total_co2e <
+                                                      2000) {
+                                                    dialogText +=
+                                                        'You are living sustainably 👋';
+                                                  } else {
+                                                    dialogText +=
+                                                        'Consider CO2 reduction!! 🚨\n see recommendations\n on this page';
+                                                  }
+                                                  showDialog(
+                                                      context: context,
+                                                      builder: (BuildContext
+                                                          context) {
+                                                        return new AlertDialog(
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius: BorderRadius.only(
+                                                                  topRight: Radius
+                                                                      .circular(
+                                                                          50))),
+                                                          backgroundColor:
+                                                              Colors.black
+                                                                  .withOpacity(
+                                                                      0.3),
+                                                          title: new Text(''),
+                                                          content:
+                                                              setupAlertDialogContainer(
+                                                                  dialogText),
+                                                        );
+                                                      });
+                                                },
+                                                child: Text(
+                                                  'CO₂ emissions',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    fontFamily: FitnessAppTheme
+                                                        .fontName,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 16,
+                                                    letterSpacing: -0.1,
+                                                    color: FitnessAppTheme.grey
+                                                        .withOpacity(0.5),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -566,6 +600,31 @@ class MediterraneanDietView extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  Widget setupAlertDialogContainer(String dialogText) {
+    double _fontsz = 20;
+
+    return Container(
+      height: 200.0, // Change as per your requirement
+      width: 300.0, // Change as per your requirement
+
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                dialogText,
+                style: TextStyle(fontSize: _fontsz, color: Colors.white),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
+        ],
+      ),
     );
   }
 }
