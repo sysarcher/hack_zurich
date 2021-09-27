@@ -48,3 +48,4 @@ app.*.map.json
 **/ios
 planet_health/web/
 best_flutter_ui_templates/android/
+*.env

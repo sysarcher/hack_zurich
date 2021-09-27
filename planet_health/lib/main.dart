@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:planet_health/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,9 +13,11 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:planet_health/globals.dart' as globals;
 import 'dart:convert' as convert;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> fetchApi_heart() async {
   try {
+    globals.headers['X-API-Key'] = dotenv.env['API_KEY'] ?? '';
     var response = await http.get(
         Uri.parse(globals.base_url + globals.heart_url),
         headers: globals.headers);
@@ -91,6 +94,7 @@ void testfetch() {
 }
 
 void main() async {
+  await dotenv.load(fileName: '.env');
   testfetch();
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[

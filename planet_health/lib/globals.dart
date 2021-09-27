@@ -1,6 +1,9 @@
 library planet_health.globals;
 
-String api_key = '0a66e421-c755-4794-82c3-451bed8ff4fd';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+//const String api_key = '0a66e421-c755-4794-82c3-451bed8ff4fd';
+String? api_key = dotenv.env['API_KEY'];
 String tenant_id = 'hackzurich';
 String base_url = 'https://api.fitrockr.com';
 String greet_url = '/v1/status/greet';
@@ -14,7 +17,8 @@ String daily_summary_uri =
 Map<String, String> headers = {
   'Accept': 'application/json',
   'X-Tenant': tenant_id,
-  'X-API-Key': api_key
+  'X-API-Key':
+      '' //dotenv.env['API_KEY'], //if(api_key != null ? api_key : 'NULL';
 };
 
 int heart_rate = 77;
