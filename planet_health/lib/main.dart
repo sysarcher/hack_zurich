@@ -18,6 +18,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 Future<void> fetchApi_heart() async {
   try {
     globals.headers['X-API-Key'] = dotenv.env['API_KEY'] ?? '';
+    if (globals.headers['X-API-key'] == '') {
+      throw Exception('API Key can not be empty!');
+    }
     var response = await http.get(
         Uri.parse(globals.base_url + globals.heart_url),
         headers: globals.headers);
