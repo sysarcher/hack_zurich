@@ -78,7 +78,7 @@ pycodestyle==2.6.0
 pycountry==20.7.3
 pycparser==2.20
 pyflakes==2.2.0
-Pygments==2.7.3
+Pygments==2.7.4
 pyparsing==2.4.7
 PyPrind==2.11.2
 pyrsistent==0.17.3
