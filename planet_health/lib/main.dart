@@ -13,14 +13,10 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:planet_health/globals.dart' as globals;
 import 'dart:convert' as convert;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+//import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> fetchApi_heart() async {
   try {
-    globals.headers['X-API-Key'] = dotenv.env['API_KEY'] ?? '';
-    if (globals.headers['X-API-key'] == '') {
-      throw Exception('API Key can not be empty!');
-    }
     var response = await http.get(
         Uri.parse(globals.base_url + globals.heart_url),
         headers: globals.headers);
@@ -83,7 +79,12 @@ Future<void> fetchApi_profile() async {
   }
 }
 
-void testfetch() {
+void fetchData() {
+  globals.headers['X-API-Key'] = dotenv.env['API_KEY'] ?? '';
+  if (globals.headers['X-API-key'] == '') {
+    throw Exception('API Key can not be empty!');
+  }
+
   const fiveSec = Duration(seconds: 5);
   const oneMin = Duration(seconds: 60);
   Timer.periodic(
@@ -98,7 +99,7 @@ void testfetch() {
 
 void main() async {
   await dotenv.load(fileName: '.env');
-  testfetch();
+  fetchData();
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
