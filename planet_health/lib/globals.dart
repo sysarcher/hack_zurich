@@ -62,27 +62,3 @@ var energyMap = {
     'calories': 30000,
   },
 };
-
-var christof = {
-  "id": "614ee7aa9187a32ff31d85c5",
-  "firstName": "HackZurich",
-  "lastName": "Test06",
-  "basalMetabolism": 1783,
-  "gender": "m",
-  "country": "DE",
-  "city": null,
-  "language": "en",
-  "timeZone": "Etc/GMT+1",
-  "email": "test06_hackzurich@company.com",
-  "yearOfBirth": 1990,
-  "height": 180,
-  "heightUOM": "cm",
-  "weight": 75,
-  "weightUOM": "kg",
-  "lastSync": null,
-  "trackerName": null,
-  "active": true,
-  "usualSleepStartTime": null,
-  "usualSleepEndTime": null,
-  "imperialUnits": false
-};
