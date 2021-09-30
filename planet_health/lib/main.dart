@@ -15,7 +15,7 @@ import 'package:planet_health/globals.dart' as globals;
 import 'dart:convert' as convert;
 //import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-Future<void> fetchApi_heart() async {
+Future<void> fetchApiHeart() async {
   try {
     var response = await http.get(
         Uri.parse(globals.base_url + globals.heart_url),
@@ -25,12 +25,12 @@ Future<void> fetchApi_heart() async {
       Iterable user = convert.jsonDecode(response.body);
       print('Message: ${user.first}');
       print(user.first['value']);
-      globals.heart_rate = user.first['value'];
-      if (globals.heart_rate > globals.heart_rate_high) {
-        globals.heart_rate_high = globals.heart_rate;
+      globals.heartRate = user.first['value'];
+      if (globals.heartRate > globals.heartRateHigh) {
+        globals.heartRateHigh = globals.heartRate;
       }
-      if (globals.heart_rate < globals.heart_rate_low) {
-        globals.heart_rate_low = globals.heart_rate;
+      if (globals.heartRate < globals.heartRateLow) {
+        globals.heartRateLow = globals.heartRate;
       }
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -40,7 +40,7 @@ Future<void> fetchApi_heart() async {
   }
 }
 
-Future<void> fetchApi_cal(String uri) async {
+Future<void> fetchApiCalories(String uri) async {
   try {
     var response = await http.get(Uri.parse(uri), headers: globals.headers);
 
@@ -49,9 +49,9 @@ Future<void> fetchApi_cal(String uri) async {
       print('Cals: ${user.first}');
       print(user.first['value']);
 
-      globals.daily_steps = user.first['steps'];
-      globals.daily_cals = user.first['calories'];
-      globals.daily_km = user.first['distance'] / 1000.0;
+      globals.dailySteps = user.first['steps'];
+      globals.dailyCals = user.first['calories'];
+      globals.dailyKm = user.first['distance'] / 1000.0;
     } else {
       print('Request failed with status: ${response.statusCode}.');
     }
@@ -60,7 +60,7 @@ Future<void> fetchApi_cal(String uri) async {
   }
 }
 
-Future<void> fetchApi_profile() async {
+Future<void> fetchApiProfile() async {
   try {
     var response = await http.get(
         Uri.parse(globals.base_url + globals.profile_url),
@@ -68,7 +68,7 @@ Future<void> fetchApi_profile() async {
 
     if (response.statusCode == 200) {
       var user = convert.jsonDecode(response.body);
-      print('Message: ${user}');
+      print('Message: $user');
       print('weight: ${user['weight']}');
       globals.weight = user['weight'];
     } else {
@@ -86,15 +86,15 @@ void fetchData() {
   }
 
   const fiveSec = Duration(seconds: 5);
-  const oneMin = Duration(seconds: 60);
+  //const oneMin = Duration(seconds: 60);
   Timer.periodic(
       fiveSec,
       (Timer t) =>
-          fetchApi_heart().then((value) => print("No Error"), onError: (e) {
-            print("Error: in HTTP invocation: ${e}");
+          fetchApiHeart().then((value) => print("No Error"), onError: (e) {
+            print("Error: in HTTP invocation: $e");
           }));
-  fetchApi_profile();
-  fetchApi_cal(globals.base_url + globals.daily_summary_uri);
+  fetchApiProfile();
+  fetchApiCalories(globals.base_url + globals.daily_summary_uri);
 }
 
 void main() async {

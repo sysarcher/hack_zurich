@@ -107,7 +107,7 @@ class HeartView extends StatelessWidget {
                                                           left: 4, bottom: 3),
                                                   child: Text(
                                                     //'${(58 * animation!.value).toInt()}',
-                                                    '${(globals.heart_rate_low * animation!.value).toInt()}',
+                                                    '${(globals.heartRateLow * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -207,7 +207,7 @@ class HeartView extends StatelessWidget {
                                                           left: 4, bottom: 3),
                                                   child: Text(
                                                     //'${(177 * animation!.value).toInt()}',
-                                                    '${(globals.heart_rate_high * animation!.value).toInt()}',
+                                                    '${(globals.heartRateHigh * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -283,7 +283,7 @@ class HeartView extends StatelessWidget {
                                         children: <Widget>[
                                           Text(
                                             //'${(77 * animation!.value).toInt()}',
-                                            '${(globals.heart_rate * animation!.value).toInt()}',
+                                            '${(globals.heartRate * animation!.value).toInt()}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:

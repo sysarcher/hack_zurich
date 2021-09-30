@@ -29,7 +29,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var count = Provider.of<Counter>(context); // <--
+    //var count = Provider.of<Counter>(context); // <--
     return Container(
         color: AppTheme.nearlyWhite,
         child: Consumer<Counter>(
