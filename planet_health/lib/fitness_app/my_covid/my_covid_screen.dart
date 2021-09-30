@@ -251,7 +251,9 @@ class _MyCovidScreenState extends State<MyCovidScreen>
                                     ),
                                   ),
                                   Text(
-                                    '26 Sep',
+                                    //'26 Sep',
+                                    //'${DateTime.now().day}.${DateTime.now().month}',
+                                    '${DateTime.now().day}.${DateTime.now().month}.${DateTime.now().year}',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,

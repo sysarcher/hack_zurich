@@ -348,7 +348,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                     ),
                                   ),
                                   Text(
-                                    '26 Sep',
+                                    //'${DateTime.now().day}.${DateTime.now().month}',
+                                    '${DateTime.now().day}.${DateTime.now().month}.${DateTime.now().year}',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,

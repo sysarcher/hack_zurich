@@ -295,7 +295,7 @@ class _MyCo2ScreenState extends State<MyCo2Screen>
                                     ),
                                   ),
                                   Text(
-                                    '26 Sep',
+                                    '${DateTime.now().day}.${DateTime.now().month}.${DateTime.now().year}',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,
