@@ -80,7 +80,7 @@ class MediterraneanDietView extends StatelessWidget {
                                                 onTap: () {
                                                   print('CO2e');
                                                   var dialogText = '';
-                                                  if (globals.total_co2e <
+                                                  if (globals.totalCo2e <
                                                       2000) {
                                                     dialogText +=
                                                         'You are living sustainably 👋';
@@ -141,7 +141,7 @@ class MediterraneanDietView extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(globals.total_co2e * animation!.value).toInt()}',
+                                                    '${(globals.totalCo2e * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:

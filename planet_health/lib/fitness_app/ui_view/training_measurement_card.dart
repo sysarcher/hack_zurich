@@ -108,7 +108,7 @@ class TrainingMeasurementView extends StatelessWidget {
                                                           left: 4, bottom: 3),
                                                   child: Text(
                                                     //'${(1100 * animation!.value).toInt()}',
-                                                    '${(globals.daily_cals * animation!.value).toInt()}',
+                                                    '${(globals.dailyCals * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -208,7 +208,7 @@ class TrainingMeasurementView extends StatelessWidget {
                                                           left: 4, bottom: 3),
                                                   child: Text(
                                                     //'${(6 * animation!.value).toInt()}',
-                                                    '${(globals.daily_km * animation!.value).toInt()}',
+                                                    '${(globals.dailyKm * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -284,7 +284,7 @@ class TrainingMeasurementView extends StatelessWidget {
                                         children: <Widget>[
                                           Text(
                                             //'${(7545 * animation!.value).toInt()}',
-                                            '${(globals.daily_steps * animation!.value).toInt()}',
+                                            '${(globals.dailySteps * animation!.value).toInt()}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:
