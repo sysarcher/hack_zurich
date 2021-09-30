@@ -3,31 +3,31 @@ library planet_health.globals;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 //const String api_key = '0a66e421-c755-4794-82c3-451bed8ff4fd';
-String? api_key = dotenv.env['API_KEY'];
-String tenant_id = 'hackzurich';
-String base_url = 'https://api.fitrockr.com';
-String greet_url = '/v1/status/greet';
-String user = '614ee7aa9187a32ff31d85c5';
-String profile_url = '/v1/users/${user}/profile';
-String heart_url =
-    '/v1/users/${user}/heartRate?startDate=2021-09-25&endDate=2021-09-26';
-String daily_summary_uri =
-    '/v1/users/${user}/dailySummaries?startDate=2021-09-25&endDate=2021-09-26';
+String? apiKey = dotenv.env['API_KEY'];
+const String TENANT_ID = 'hackzurich';
+const String base_url = 'https://api.fitrockr.com';
+const String greet_url = '/v1/status/greet';
+const String user = '614ee7aa9187a32ff31d85c5';
+const String profile_url = '/v1/users/$user/profile';
+const String heart_url =
+    '/v1/users/$user/heartRate?startDate=2021-09-25&endDate=2021-09-26';
+const String daily_summary_uri =
+    '/v1/users/$user/dailySummaries?startDate=2021-09-25&endDate=2021-09-26';
 
 Map<String, String> headers = {
   'Accept': 'application/json',
-  'X-Tenant': tenant_id,
+  'X-Tenant': TENANT_ID,
   'X-API-Key':
       '' //dotenv.env['API_KEY'], //if(api_key != null ? api_key : 'NULL';
 };
 
-int heart_rate = 77;
-int heart_rate_high = 97;
-int heart_rate_low = 57;
+int heartRate = 77;
+int heartRateHigh = 97;
+int heartRateLow = 57;
 int weight = 55;
-int daily_cals = 1000;
-int daily_steps = 1000;
-double daily_km = 1.5;
+int dailyCals = 1000;
+int dailySteps = 1000;
+double dailyKm = 1.5;
 
 class EnergyMap {
   String name = '';
@@ -49,9 +49,9 @@ var milk = EnergyMap("Milk", 122, 280);
 var water = EnergyMap("Water", 0, 5);
 List<EnergyMap> day1 = [bread, beef, salmon];
 List<EnergyMap> day2 = [tofu, milk, water];
-int total_co2e = 0;
+int totalCo2e = 0;
 
-var energy_map = {
+var energyMap = {
   'white_bread': {
     'name': 'White Bread',
     'calories': 66,

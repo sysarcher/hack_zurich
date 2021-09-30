@@ -1,8 +1,8 @@
 //import 'package:planet_health/fitness_app/models/meals_list_data.dart';
 //import 'package:planet_health/fitness_app/models/meals_list_data_diary.dart';
-import 'package:planet_health/fitness_app/training/meals_list_view.dart';
+//import 'package:planet_health/fitness_app/training/meals_list_view.dart';
 import 'package:planet_health/fitness_app/ui_view/training_list_view.dart';
-import 'package:planet_health/fitness_app/ui_view/running_view.dart';
+//import 'package:planet_health/fitness_app/ui_view/running_view.dart';
 import 'package:planet_health/fitness_app/ui_view/title_view.dart';
 import 'package:planet_health/fitness_app/ui_view/glass_view_training.dart';
 import 'package:planet_health/fitness_app/ui_view/workout_view.dart';

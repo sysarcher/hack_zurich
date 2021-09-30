@@ -118,13 +118,13 @@ class MealsView extends StatelessWidget {
                         var days = [globals.day1, globals.day2];
 
                         var today = days[Random().nextInt(days.length)];
-                        var total_kcal = 0;
-                        var total_co2e = 0;
+                        var totalKcal = 0;
+                        var totalCo2e = 0;
                         for (var meal in today) {
-                          total_kcal += meal.calories;
-                          total_co2e += meal.co2;
+                          totalKcal += meal.calories;
+                          totalCo2e += meal.co2;
                         }
-                        globals.total_co2e = total_co2e;
+                        globals.totalCo2e = totalCo2e;
 
                         print('Gesture detector');
                         String dialogText = 'Your Meal: \n\n';
@@ -135,9 +135,9 @@ class MealsView extends StatelessWidget {
                               item.calories.toString() +
                               ' kcal)\n';
                         }
-                        dialogText += '\nTotal (kcal): ${total_kcal}';
+                        dialogText += '\nTotal (kcal): $totalKcal';
 
-                        if (total_kcal > 500) {
+                        if (totalKcal > 500) {
                           dialogText += '\n\nHigh Caloric Intake\n\n' +
                               'Recommendation:\nPlan workout';
                         } else {
