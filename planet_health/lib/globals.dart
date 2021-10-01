@@ -25,9 +25,9 @@ Map<String, String> headers = {
 
 final heartRateProvider = StateProvider((ref) => 0);
 
-int heartRate = 77;
-int heartRateHigh = 97;
-int heartRateLow = 57;
+int heartRate = 0;
+int heartRateHigh = 0;
+int heartRateLow = 60;
 int weight = 55;
 int dailyCals = 1000;
 int dailySteps = 1000;
