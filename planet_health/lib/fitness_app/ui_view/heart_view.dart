@@ -3,8 +3,10 @@ import 'package:planet_health/main.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:planet_health/globals.dart' as globals;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HeartView extends StatelessWidget {
+//class HeartView extends StatelessWidget {
+class HeartView extends ConsumerWidget {
   final AnimationController? animationController;
   final Animation<double>? animation;
 
@@ -12,7 +14,8 @@ class HeartView extends StatelessWidget {
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final int value = ref.watch(globals.heartRateProvider).state;
     return AnimatedBuilder(
       animation: animationController!,
       builder: (BuildContext context, Widget? child) {
@@ -283,7 +286,7 @@ class HeartView extends StatelessWidget {
                                         children: <Widget>[
                                           Text(
                                             //'${(77 * animation!.value).toInt()}',
-                                            '${(globals.heartRate * animation!.value).toInt()}',
+                                            '${(value * animation!.value).toInt()}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:

@@ -1,5 +1,7 @@
 library planet_health.globals;
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 //const String api_key = '0a66e421-c755-4794-82c3-451bed8ff4fd';
@@ -20,6 +22,8 @@ Map<String, String> headers = {
   'X-API-Key':
       '' //dotenv.env['API_KEY'], //if(api_key != null ? api_key : 'NULL';
 };
+
+final heartRateProvider = StateProvider((ref) => 0);
 
 int heartRate = 77;
 int heartRateHigh = 97;

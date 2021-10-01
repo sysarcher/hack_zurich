@@ -5,8 +5,8 @@ import 'package:planet_health/feedback_screen.dart';
 import 'package:planet_health/help_screen.dart';
 //import 'package:planet_health/home_screen.dart';
 import 'package:planet_health/invite_friend_screen.dart';
-import 'package:planet_health/user_data.dart';
-import 'package:provider/provider.dart';
+//import 'package:planet_health/user_data.dart';
+//import 'package:provider/provider.dart';
 import 'fitness_app/fitness_app_home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -31,29 +31,28 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
   Widget build(BuildContext context) {
     //var count = Provider.of<Counter>(context); // <--
     return Container(
-        color: AppTheme.nearlyWhite,
-        child: Consumer<Counter>(
-          builder: (context, data, child) {
-            return SafeArea(
-              top: false,
-              bottom: false,
-              child: Scaffold(
-                backgroundColor: AppTheme.nearlyWhite,
-                body: DrawerUserController(
-                  screenIndex: drawerIndex,
-                  drawerWidth: MediaQuery.of(context).size.width * 0.75,
-                  onDrawerCall: (DrawerIndex drawerIndexdata) {
-                    changeIndex(drawerIndexdata);
-                    //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
-                  },
-                  screenView: screenView,
-                  //we replace screen view as we need on navigate starting screens like MyHomePage, HelpScreen, FeedbackScreen, etc...
-                ),
-              ),
-            );
-          },
-        ));
+      color: AppTheme.nearlyWhite,
+      child: SafeArea(
+        top: false,
+        bottom: false,
+        child: Scaffold(
+          backgroundColor: AppTheme.nearlyWhite,
+          body: DrawerUserController(
+            screenIndex: drawerIndex,
+            drawerWidth: MediaQuery.of(context).size.width * 0.75,
+            onDrawerCall: (DrawerIndex drawerIndexdata) {
+              changeIndex(drawerIndexdata);
+              //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
+            },
+            screenView: screenView,
+            //we replace screen view as we need on navigate starting screens like MyHomePage, HelpScreen, FeedbackScreen, etc...
+          ),
+        ),
+      ),
+    );
   }
+  //);
+  //}
 
   void changeIndex(DrawerIndex drawerIndexdata) {
     if (drawerIndex != drawerIndexdata) {
