@@ -42,8 +42,8 @@ class MyApp extends ConsumerWidget {
 
       if (response.statusCode == 200) {
         Iterable user = convert.jsonDecode(response.body);
-        print('Message: ${user.first}');
-        print(user.first['value']);
+        //print('Message: ${user.first}');
+        //print(user.first['value']);
         globals.heartRate = user.first['value'];
         //globals.heartRateProvider = user.first['value'];
         ref.watch(globals.heartRateProvider).state = globals.heartRate;
@@ -56,8 +56,8 @@ class MyApp extends ConsumerWidget {
       } else {
         print('Request failed with status: ${response.statusCode}.');
       }
-    } catch (_) {
-      print("CHECK WIFI");
+    } catch (e) {
+      print("$e");
     }
   }
 
@@ -76,8 +76,8 @@ class MyApp extends ConsumerWidget {
       } else {
         print('Request failed with status: ${response.statusCode}.');
       }
-    } catch (_) {
-      print("CHECK WIFI");
+    } catch (e) {
+      print("$e");
     }
   }
 
@@ -95,8 +95,8 @@ class MyApp extends ConsumerWidget {
       } else {
         print('Request failed with status: ${response.statusCode}.');
       }
-    } catch (_) {
-      print("Err getting weight");
+    } catch (e) {
+      print("$e");
     }
   }
 
@@ -110,8 +110,8 @@ class MyApp extends ConsumerWidget {
     //const oneMin = Duration(seconds: 60);
     Timer.periodic(
         fiveSec,
-        (Timer t) =>
-            fetchApiHeart(ref).then((value) => print("No Error"), onError: (e) {
+        (Timer t) => fetchApiHeart(ref).then(
+                (value) => print("Heart Rate fetch success"), onError: (e) {
               print("Error: in HTTP invocation: $e");
             }));
     fetchApiProfile();

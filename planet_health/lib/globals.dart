@@ -9,12 +9,12 @@ String? apiKey = dotenv.env['API_KEY'];
 const String TENANT_ID = 'hackzurich';
 const String base_url = 'https://api.fitrockr.com';
 const String greet_url = '/v1/status/greet';
-const String user = '614ee7aa9187a32ff31d85c5';
+const String user = '613dc4c9309a3f06bfa716ee';
 const String profile_url = '/v1/users/$user/profile';
 const String heart_url =
-    '/v1/users/$user/heartRate?startDate=2021-09-25&endDate=2021-09-26';
+    '/v1/users/$user/heartRate?startDate=2021-10-04&endDate=2021-10-04';
 const String daily_summary_uri =
-    '/v1/users/$user/dailySummaries?startDate=2021-09-25&endDate=2021-09-26';
+    '/v1/users/$user/dailySummaries?startDate=2021-10-04&endDate=2021-10-04';
 
 Map<String, String> headers = {
   'Accept': 'application/json',
